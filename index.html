@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --serif: 'DM Serif Display', serif;
       --sans: 'DM Sans', sans-serif;
@@ -21,7 +20,6 @@
       --surf: #f5f4f0;
       --bg: #ffffff;
     }
-
     @media (prefers-color-scheme: dark) {
       :root {
         --ink: #f0ede8;
@@ -32,257 +30,78 @@
         --bg: #141412;
       }
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+    .page { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
 
-    body {
-      font-family: var(--sans);
-      color: var(--ink);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
-
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 3rem;
-      border-bottom: 0.5px solid var(--line);
-      margin-bottom: 4rem;
-    }
+    nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 3rem; border-bottom: 0.5px solid var(--line); margin-bottom: 4rem; }
     .logo { font-family: var(--serif); font-size: 18px; letter-spacing: -0.3px; color: var(--ink); }
     .nav-links { display: flex; gap: 2rem; }
-    .nav-links a {
-      font-size: 13px;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      cursor: pointer;
-      transition: color 0.15s;
-    }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.15s; }
     .nav-links a:hover { color: var(--ink); }
 
-    /* HERO */
     .hero { margin-bottom: 5rem; }
-    .hero-label {
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--hint);
-      margin-bottom: 1.25rem;
-    }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(34px, 5.5vw, 52px);
-      line-height: 1.1;
-      letter-spacing: -1px;
-      margin-bottom: 1.75rem;
-      color: var(--ink);
-    }
+    .hero-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hint); margin-bottom: 1.25rem; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(34px, 5.5vw, 52px); line-height: 1.1; letter-spacing: -1px; margin-bottom: 1.75rem; color: var(--ink); }
     .hero h1 em { font-style: italic; color: var(--muted); }
-    .hero-desc {
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 580px;
-      margin-bottom: 2rem;
-    }
-    .hero-cta {
-      display: inline-block;
-      padding: 10px 24px;
-      border: 0.5px solid var(--ink);
-      border-radius: 100px;
-      font-size: 13px;
-      font-family: var(--sans);
-      cursor: pointer;
-      color: var(--ink);
-      background: transparent;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
+    .hero-desc { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 580px; margin-bottom: 2rem; }
+    .hero-cta { display: inline-block; padding: 10px 24px; border: 0.5px solid var(--ink); border-radius: 100px; font-size: 13px; font-family: var(--sans); cursor: pointer; color: var(--ink); background: transparent; text-decoration: none; transition: background 0.15s; }
     .hero-cta:hover { background: var(--surf); }
     .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem; }
-    .tag {
-      font-size: 11px;
-      letter-spacing: 0.04em;
-      padding: 5px 12px;
-      border: 0.5px solid var(--line);
-      border-radius: 100px;
-      color: var(--muted);
-    }
+    .tag { font-size: 11px; letter-spacing: 0.04em; padding: 5px 12px; border: 0.5px solid var(--line); border-radius: 100px; color: var(--muted); }
 
-    /* SECTIONS */
     .section { margin-bottom: 4.5rem; }
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--hint);
-      margin-bottom: 2rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 0.5px solid var(--line);
-    }
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hint); margin-bottom: 2rem; padding-bottom: 0.75rem; border-bottom: 0.5px solid var(--line); }
 
-    /* SERVICES */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1px;
-      border: 0.5px solid var(--line);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .service-item {
-      padding: 1.5rem;
-      background: var(--bg);
-      transition: background 0.15s;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; border: 0.5px solid var(--line); border-radius: 12px; overflow: hidden; }
+    .service-item { padding: 1.5rem; background: var(--bg); transition: background 0.15s; }
     .service-item:hover { background: var(--surf); }
     .service-num { font-family: var(--serif); font-size: 11px; color: var(--hint); margin-bottom: 0.75rem; }
     .service-title { font-size: 14px; font-weight: 500; margin-bottom: 0.5rem; color: var(--ink); }
     .service-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
-    /* EXPERIENCE */
-    .exp-block {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
+    .exp-block { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     .exp-intro { font-size: 15px; line-height: 1.85; color: var(--muted); margin-bottom: 2rem; }
     .exp-intro strong { color: var(--ink); font-weight: 500; }
     .comp-list { display: flex; flex-direction: column; }
-    .comp-item {
-      padding: 0.85rem 0;
-      border-bottom: 0.5px solid var(--line);
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.55;
-      display: flex;
-      gap: 12px;
-      align-items: baseline;
-    }
+    .comp-item { padding: 0.85rem 0; border-bottom: 0.5px solid var(--line); font-size: 13px; color: var(--muted); line-height: 1.55; display: flex; gap: 12px; align-items: baseline; }
     .comp-item:first-child { border-top: 0.5px solid var(--line); }
-    .comp-dot {
-      width: 3px; height: 3px;
-      border-radius: 50%;
-      background: var(--hint);
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-    .brands-box {
-      border: 0.5px solid var(--line);
-      border-radius: 12px;
-      padding: 1.5rem;
-    }
-    .brands-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--hint);
-      margin-bottom: 1.25rem;
-    }
+    .comp-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--hint); flex-shrink: 0; margin-top: 8px; }
+    .brands-box { border: 0.5px solid var(--line); border-radius: 12px; padding: 1.5rem; }
+    .brands-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--hint); margin-bottom: 1.25rem; }
     .brands-grid { display: flex; flex-wrap: wrap; gap: 7px; }
-    .brand {
-      font-size: 12px;
-      padding: 5px 12px;
-      border: 0.5px solid var(--line);
-      border-radius: 100px;
-      color: var(--muted);
-    }
+    .brand { font-size: 12px; padding: 5px 12px; border: 0.5px solid var(--line); border-radius: 100px; color: var(--muted); }
 
-    /* ABOUT */
-    .about-block {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
+    .about-block { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     .about-text { font-size: 15px; line-height: 1.85; color: var(--muted); }
     .about-text strong { color: var(--ink); font-weight: 500; }
-    .about-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      border: 0.5px solid var(--line);
-      border-radius: 12px;
-      overflow: hidden;
-    }
+    .about-stats { display: flex; flex-direction: column; gap: 1px; border: 0.5px solid var(--line); border-radius: 12px; overflow: hidden; }
     .stat { padding: 1rem 1.25rem; background: var(--bg); }
     .stat-num { font-family: var(--serif); font-size: 30px; color: var(--ink); }
     .stat-label { font-size: 12px; color: var(--hint); margin-top: 2px; }
 
-    /* CONTACT */
-    .contact-block {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
+    .contact-block { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
     .contact-text { font-size: 15px; line-height: 1.85; color: var(--muted); }
-    .contact-detail {
-      display: block;
-      margin-top: 4px;
-      font-size: 13px;
-      color: var(--hint);
-      text-decoration: none;
-    }
+    .contact-detail { display: block; margin-top: 4px; font-size: 13px; color: var(--hint); text-decoration: none; transition: color 0.15s; }
     .contact-detail:first-of-type { margin-top: 1.25rem; }
     .contact-detail:hover { color: var(--ink); }
     .contact-form { display: flex; flex-direction: column; gap: 12px; }
     .form-field { display: flex; flex-direction: column; gap: 5px; }
     .form-field label { font-size: 12px; color: var(--hint); letter-spacing: 0.04em; }
-    .form-field input, .form-field textarea {
-      background: var(--bg);
-      border: 0.5px solid rgba(0,0,0,0.2);
-      border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 14px;
-      font-family: var(--sans);
-      color: var(--ink);
-      outline: none;
-      resize: none;
-      transition: border-color 0.15s;
-    }
-    .form-field input:focus, .form-field textarea:focus {
-      border-color: rgba(0,0,0,0.4);
-    }
-    .submit-btn {
-      margin-top: 4px;
-      padding: 10px 24px;
-      background: var(--ink);
-      color: var(--bg);
-      border: none;
-      border-radius: 100px;
-      font-size: 13px;
-      font-family: var(--sans);
-      cursor: pointer;
-      align-self: flex-start;
-      transition: opacity 0.15s;
-    }
+    .form-field input, .form-field textarea { background: var(--bg); border: 0.5px solid rgba(0,0,0,0.2); border-radius: 8px; padding: 10px 12px; font-size: 14px; font-family: var(--sans); color: var(--ink); outline: none; resize: none; transition: border-color 0.15s; }
+    .form-field input:focus, .form-field textarea:focus { border-color: rgba(0,0,0,0.4); }
+    .submit-btn { margin-top: 4px; padding: 10px 24px; background: var(--ink); color: var(--bg); border: none; border-radius: 100px; font-size: 13px; font-family: var(--sans); cursor: pointer; align-self: flex-start; transition: opacity 0.15s; }
     .submit-btn:hover { opacity: 0.8; }
-    #form-msg { font-size: 12px; color: #3b6d11; margin-top: 6px; display: none; }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    #form-msg { font-size: 13px; color: #3b6d11; margin-top: 8px; display: none; }
+    #form-error { font-size: 13px; color: #a32d2d; margin-top: 8px; display: none; }
 
-    /* FOOTER */
-    footer {
-      padding-top: 2rem;
-      border-top: 0.5px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    footer { padding-top: 2rem; border-top: 0.5px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
     .footer-name { font-family: var(--serif); font-size: 14px; color: var(--ink); }
     .footer-links { display: flex; gap: 1.5rem; }
     .footer-links a { font-size: 12px; color: var(--hint); text-decoration: none; transition: color 0.15s; }
     .footer-links a:hover { color: var(--ink); }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
       .about-block, .contact-block, .exp-block { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
@@ -304,10 +123,10 @@
     </nav>
 
     <section class="hero">
-      <div class="hero-label">Digital Growth Consultant — Warszawa</div>
-      <h1>Przemysław<br>Sotomski — <em>digital growth consultant</em></h1>
+      <div class="hero-label">Digital Growth Consultant &#8212; Warszawa</div>
+      <h1>Przemysław<br>Sotomski &#8212; <em>digital growth consultant</em></h1>
       <p class="hero-desc">Pomagam markom i e-commerce rosnąć dzięki precyzyjnym strategiom płatnych reklam, analityce danych i optymalizacji konwersji. Buduję systemy, które sprzedają.</p>
-      <a class="hero-cta" href="#s-kontakt">Porozmawiajmy ↓</a>
+      <a class="hero-cta" href="#s-kontakt">Porozmawiajmy &#8595;</a>
       <div class="hero-tags">
         <span class="tag">Google Ads</span>
         <span class="tag">Meta Ads</span>
@@ -317,7 +136,7 @@
         <span class="tag">E-commerce</span>
         <span class="tag">Strategia</span>
         <span class="tag">GA4 / GTM</span>
-        <span class="tag">UE · UK · USA</span>
+        <span class="tag">UE &#183; UK &#183; USA</span>
       </div>
     </section>
 
@@ -332,7 +151,7 @@
         <div class="service-item">
           <div class="service-num">02</div>
           <div class="service-title">Paid Social</div>
-          <div class="service-desc">Meta Ads, TikTok Ads, Pinterest Ads, LinkedIn Ads. Kreatywna strategia + precyzyjna egzekucja pod ROAS.</div>
+          <div class="service-desc">Meta Ads, TikTok Ads, Pinterest Ads, LinkedIn Ads. Kreatywna strategia i precyzyjna egzekucja pod ROAS.</div>
         </div>
         <div class="service-item">
           <div class="service-num">03</div>
@@ -341,18 +160,18 @@
         </div>
         <div class="service-item">
           <div class="service-num">04</div>
-          <div class="service-title">Konsulting & audyty</div>
+          <div class="service-title">Konsulting i audyty</div>
           <div class="service-desc">Audyty kont reklamowych, doradztwo strategiczne, szkolenia dla zespołów. Dostosowane do skali i potrzeb partnera.</div>
         </div>
         <div class="service-item">
           <div class="service-num">05</div>
-          <div class="service-title">Analityka & tracking</div>
+          <div class="service-title">Analityka i tracking</div>
           <div class="service-desc">GA4, GTM, Google Merchant Center, HotJar. Dane, które naprawdę pomagają podejmować decyzje.</div>
         </div>
         <div class="service-item">
           <div class="service-num">06</div>
           <div class="service-title">Ekspansja międzynarodowa</div>
-          <div class="service-desc">Skalowanie kampanii na rynki UE, UK i USA. Lokalne podejście, globalna skala — bez utraty efektywności.</div>
+          <div class="service-desc">Skalowanie kampanii na rynki UE, UK i USA. Lokalne podejście, globalna skala &#8212; bez utraty efektywności.</div>
         </div>
       </div>
     </section>
@@ -361,12 +180,12 @@
       <div class="section-label">Doświadczenie</div>
       <div class="exp-block">
         <div>
-          <p class="exp-intro">Ponad dekada w performance marketingu — po obu stronach stołu. Zaczynałem od fundamentów SEM i content marketingu, przez lata rozwijałem się w środowisku jednej z największych agencji performance w Polsce, by dziś pracować bezpośrednio z markami jako niezależny ekspert i growth consultant.<br><br>
-          Prowadziłem kampanie z budżetami liczonymi w milionach złotych, tworzyłem strategie od zera, szkoliłem zespoły i klientów. Działam na rynkach <strong>Polski, całej Unii Europejskiej, Wielkiej Brytanii i USA</strong> — zawsze z naciskiem na jedno: <strong>realny zwrot z inwestycji</strong>.</p>
+          <p class="exp-intro">Ponad dekada w performance marketingu &#8212; po obu stronach stołu. Zaczynałem od fundamentów SEM i content marketingu, przez lata rozwijałem się w środowisku jednej z największych agencji performance w Polsce, by dziś pracować bezpośrednio z markami jako niezależny ekspert i growth consultant.<br><br>
+          Prowadziłem kampanie z budżetami liczonymi w milionach złotych, tworzyłem strategie od zera, szkoliłem zespoły i klientów. Działam na rynkach <strong>Polski, całej Unii Europejskiej, Wielkiej Brytanii i USA</strong> &#8212; zawsze z naciskiem na jedno: <strong>realny zwrot z inwestycji</strong>.</p>
           <div class="comp-list">
             <div class="comp-item"><span class="comp-dot"></span><span>Projektowanie i wdrażanie strategii kampanii performance od podstaw</span></div>
             <div class="comp-item"><span class="comp-dot"></span><span>Zarządzanie kampaniami Google Ads, Meta, TikTok, Pinterest, LinkedIn</span></div>
-            <div class="comp-item"><span class="comp-dot"></span><span>Audyty kont i optymalizacja pod KPI — ROAS, CPA, CLV</span></div>
+            <div class="comp-item"><span class="comp-dot"></span><span>Audyty kont i optymalizacja pod KPI &#8212; ROAS, CPA, CLV</span></div>
             <div class="comp-item"><span class="comp-dot"></span><span>Budowa struktur kampanii e-commerce i lokalnych biznesów</span></div>
             <div class="comp-item"><span class="comp-dot"></span><span>Implementacja i konfiguracja analityki: GA4, GTM, GMC, Pixel</span></div>
             <div class="comp-item"><span class="comp-dot"></span><span>Szkolenia i warsztaty dla marketerów oraz zespołów klientów</span></div>
@@ -396,14 +215,14 @@
       <div class="section-label">O mnie</div>
       <div class="about-block">
         <div class="about-text">
-          Nie wierzę w kampanie "ustawione raz na zawsze". Każda marka jest inna — inne cele, inny klient, inny rynek. Dlatego <strong>każdą współpracę zaczynam od zrozumienia biznesu</strong>, nie od klikania w panelu reklamowym.<br><br>
-          Łączę analityczne podejście do danych z wyczuciem tego, co naprawdę działa na odbiorców — zarówno w Polsce, jak i na wymagających rynkach zachodnich. Działam szybko, komunikuję wprost i traktuję budżet klienta jak własny.
+          Nie wierzę w kampanie &#8220;ustawione raz na zawsze&#8221;. Każda marka jest inna &#8212; inne cele, inny klient, inny rynek. Dlatego <strong>każdą współpracę zaczynam od zrozumienia biznesu</strong>, nie od klikania w panelu reklamowym.<br><br>
+          Łączę analityczne podejście do danych z wyczuciem tego, co naprawdę działa na odbiorców &#8212; zarówno w Polsce, jak i na wymagających rynkach zachodnich. Działam szybko, komunikuję wprost i traktuję budżet klienta jak własny.
         </div>
         <div class="about-stats">
           <div class="stat"><div class="stat-num">12+</div><div class="stat-label">lat w digital marketingu</div></div>
-          <div class="stat"><div class="stat-num">UE · UK · USA</div><div class="stat-label">rynki, na których działam</div></div>
+          <div class="stat"><div class="stat-num">UE &#183; UK &#183; USA</div><div class="stat-label">rynki, na których działam</div></div>
           <div class="stat"><div class="stat-num">5+</div><div class="stat-label">aktywnych współprac równolegle</div></div>
-          <div class="stat"><div class="stat-num">B2C & B2B</div><div class="stat-label">e-commerce, retail, usługi, local</div></div>
+          <div class="stat"><div class="stat-num">B2C i B2B</div><div class="stat-label">e-commerce, retail, usługi, local</div></div>
         </div>
       </div>
     </section>
@@ -413,27 +232,28 @@
       <div class="contact-block">
         <div class="contact-text">
           Masz sklep, który nie skaluje się tak jak powinien? Kampanie, które pochłaniają budżet bez efektów? A może planujesz wejście na nowy rynek?<br><br>
-          Napisz — pierwsze spotkanie jest bezpłatne i bez zobowiązań.
+          Napisz &#8212; pierwsze spotkanie jest bezpłatne i bez zobowiązań.
           <a class="contact-detail" href="mailto:sotoperfoto@gmail.com">sotoperfoto@gmail.com</a>
           <a class="contact-detail" href="https://www.linkedin.com/in/przemys%C5%82aw-sotomski-222384a5/" target="_blank">LinkedIn: Przemysław Sotomski</a>
           <span class="contact-detail">Warszawa, Polska</span>
         </div>
-        <div class="contact-form">
+        <form class="contact-form" id="contact-form">
           <div class="form-field">
-            <label>Imię i nazwisko</label>
-            <input type="text" id="f-name" placeholder="Anna Kowalska">
+            <label for="f-name">Imię i nazwisko</label>
+            <input type="text" id="f-name" name="name" placeholder="Anna Kowalska" required>
           </div>
           <div class="form-field">
-            <label>E-mail</label>
-            <input type="email" id="f-email" placeholder="anna@firma.pl">
+            <label for="f-email">E-mail</label>
+            <input type="email" id="f-email" name="email" placeholder="anna@firma.pl" required>
           </div>
           <div class="form-field">
-            <label>Wiadomość</label>
-            <textarea id="f-msg" rows="4" placeholder="Opowiedz mi o swoim projekcie..."></textarea>
+            <label for="f-msg">Wiadomość</label>
+            <textarea id="f-msg" name="message" rows="4" placeholder="Opowiedz mi o swoim projekcie..." required></textarea>
           </div>
-          <button class="submit-btn" onclick="handleSubmit()">Wyślij wiadomość</button>
-          <div id="form-msg">Dziękuję — odezwę się wkrótce!</div>
-        </div>
+          <button class="submit-btn" type="submit" id="submit-btn">Wyślij wiadomość</button>
+          <div id="form-msg">Dziękuję &#8212; odezwę się wkrótce!</div>
+          <div id="form-error">Coś poszło nie tak. Napisz bezpośrednio na sotoperfoto@gmail.com</div>
+        </form>
       </div>
     </section>
 
@@ -448,16 +268,32 @@
   </div>
 
   <script>
-    function handleSubmit() {
-      var n = document.getElementById('f-name').value.trim();
-      var e = document.getElementById('f-email').value.trim();
-      var m = document.getElementById('f-msg').value.trim();
-      if (!n || !e || !m) return;
-      document.getElementById('form-msg').style.display = 'block';
-      document.getElementById('f-name').value = '';
-      document.getElementById('f-email').value = '';
-      document.getElementById('f-msg').value = '';
-    }
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submit-btn');
+      btn.textContent = 'Wysyłanie...';
+      btn.disabled = true;
+      document.getElementById('form-msg').style.display = 'none';
+      document.getElementById('form-error').style.display = 'none';
+      try {
+        var response = await fetch('https://formspree.io/f/xkoqqbbo', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(this)
+        });
+        if (response.ok) {
+          document.getElementById('form-msg').style.display = 'block';
+          this.reset();
+          btn.textContent = 'Wysłano';
+        } else {
+          throw new Error('error');
+        }
+      } catch(err) {
+        document.getElementById('form-error').style.display = 'block';
+        btn.textContent = 'Wyślij wiadomość';
+        btn.disabled = false;
+      }
+    });
   </script>
 </body>
 </html>
